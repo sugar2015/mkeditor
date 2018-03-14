@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: mkeditor
+Version: 0.1
+Summary: A custom form widget of Django for markdown
+Home-page: https://github.com/sugar2015/mkeditor
+Author: wim
+Author-email: wim114@dingtalk.com
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Description: ## Installation
+        1. Get the code: pip install mkeditor
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3.6

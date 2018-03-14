@@ -1,7 +1,7 @@
 from django import VERSION, forms
 from django.template import Context, loader
 from django.utils.html import conditional_escape
-
+from mkeditor import settings
 
 try:
     from django.forms.utils import flatatt
@@ -15,16 +15,16 @@ except ImportError:
 
 class MarkdownWidget(forms.Textarea):
 
-
     def __init__(self, *args, **kwargs):
-        self.template = "editor.html"
+        self.template = kwargs.pop("template", settings.WIDGET_TEMPLATE)
+        self.css = kwargs.pop("css", settings.WIDGET_CSS)
         super(MarkdownWidget, self).__init__(*args, **kwargs)
 
     @property
     def media(self):
         return forms.Media(
             css={
-                "all": ("css/editormd.css","css/style.css")
+                "all": self.css
             },
             js=(
                 "js/jquery.min.js",
